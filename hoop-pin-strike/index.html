@@ -1002,5 +1002,13 @@ button:active {
   newGame();
 })();
 </script>
+  <script>
+const startBtn = document.getElementById("startGameBtn");
+const introScreen = document.getElementById("introScreen");
+
+startBtn.addEventListener("click", () => {
+  introScreen.style.display = "none";
+});
+</script>
 </body>
 </html>
