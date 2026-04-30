@@ -191,9 +191,18 @@ button:active {
 <body>
 <!-- INTRO SCREEN -->
 <div id="introScreen">
-  <video id="introVideo" autoplay muted playsinline loop>
-    <source src="intro.mp4" type="video/mp4">
-  </video>
+  const introVideo = document.getElementById("introVideo");
+const startBtn = document.getElementById("startGameBtn");
+const introScreen = document.getElementById("introScreen");
+
+startBtn.addEventListener("click", () => {
+  introVideo.muted = false;
+  introVideo.play();
+
+  introVideo.onended = () => {
+    introScreen.style.display = "none";
+  };
+});
 
   <button id="startGameBtn">START GAME</button>
 </div>
